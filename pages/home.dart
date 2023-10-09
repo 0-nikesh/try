@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instahomepage/util/bubble_stories.dart';
+import 'package:instahomepage/util/user_post.dart';
 
 class UserHome extends StatelessWidget {
   final List people = [
@@ -42,16 +43,16 @@ class UserHome extends StatelessWidget {
           children: [
             //stories
             Container(
-                height: 130,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: people.length,
-                    itemBuilder: (context, index) {
-                      return BubbleStories(text: people[index]);
-                    })
-
-                //posts
-                ),
+              height: 130,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: people.length,
+                  itemBuilder: (context, index) {
+                    return BubbleStories(text: people[index]);
+                  }),
+            ),
+            //posts
+            UserPost(name: "Nikesh"),
           ],
         ));
   }

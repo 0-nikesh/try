@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:instahomepage/pages/account.dart';
+import 'package:instahomepage/pages/home.dart';
+import 'package:instahomepage/pages/reels.dart';
+import 'package:instahomepage/pages/search.dart';
+import 'package:instahomepage/pages/shop.dart';
 
 class homepage extends StatefulWidget {
   const homepage({super.key});
@@ -9,7 +14,7 @@ class homepage extends StatefulWidget {
 
 class _homepageState extends State<homepage> {
   //navigate around the buttons
-  int _selectedIndex = 3;
+  int _selectedIndex = 0;
   void _navigateBottomNavBar(int index) {
     setState(() {
       _selectedIndex = index;
@@ -18,11 +23,11 @@ class _homepageState extends State<homepage> {
 
   //different pages of each of the nav buttons
   final List<Widget> _children = [
-    Center(child: Text("Home")),
-    Center(child: Text("Search")),
-    Center(child: Text("Reels")),
-    Center(child: Text("Shop")),
-    Center(child: Text("Account")),
+    UserHome(),
+    UserSearch(),
+    UserReels(),
+    UserShop(),
+    UserAccount(),
   ];
 
   @override

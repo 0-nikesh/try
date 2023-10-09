@@ -8,6 +8,7 @@ class homepage extends StatefulWidget {
 }
 
 class _homepageState extends State<homepage> {
+  //navigate around the buttons
   int _selectedIndex = 3;
   void _navigateBottomNavBar(int index) {
     setState(() {
@@ -15,10 +16,19 @@ class _homepageState extends State<homepage> {
     });
   }
 
+  //different pages of each of the nav buttons
+  final List<Widget> _children = [
+    Center(child: Text("Home")),
+    Center(child: Text("Search")),
+    Center(child: Text("Reels")),
+    Center(child: Text("Shop")),
+    Center(child: Text("Account")),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("body here")),
+      body: _children[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,
           onTap: _navigateBottomNavBar,

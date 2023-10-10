@@ -81,16 +81,20 @@ class UserPost extends StatelessWidget {
         //caption
         Padding(
           padding: const EdgeInsets.only(left: 16.0, top: 8),
-          child: Row(
-            children: [
-              Text(
-                "Nikesh",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Text(' Let it go 😄😐😄😐😐😄😄...'),
-            ],
+          child: RichText(
+            text: TextSpan(
+              style: TextStyle(color: Colors.black),
+              children: [
+                TextSpan(
+                    text: " Nikesh ",
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                TextSpan(text: " Let it go 😄😄😄😄😄....... ")
+              ],
+            ),
           ),
         )
+
+        //comments
       ],
     );
   }
